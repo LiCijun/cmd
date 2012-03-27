@@ -1,0 +1,10 @@
+$ sudo mkdir /home/svn
+$ cd /home/svn
+$ sudo mkdir myproject
+$ sudo chown -R root:subversion myproject
+
+$ sudo chmod -R g+rws myproject
+$ sudo svnadmin create /home/svn/myproject
+
+sudo htpasswd  passwordconf user_name
+创建文件新文件 -c
