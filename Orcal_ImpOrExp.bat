@@ -3,8 +3,8 @@
 set /p filename=请输入导出或导入文件名,不需要输入后缀:
 if /i "%filename%"=="" goto :start
 
-set /p uid=数据库连接方式 用户名\密码@实例名 默认为mtss2/mtss2@keymandb:
-if /i "%uid%"==""   set uid=mtss2/mtss2@keymandb 
+set /p uid=数据库连接方式 用户名/密码@实例名 默认为fss/fss@lidb:
+if /i "%uid%"==""   set uid=fss/fss@lidb 
 :start1
 set /p choice=导出数据请输入e，导入数据输入i:
 if /i "%choice%"=="e" goto:exp
