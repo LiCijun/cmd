@@ -29,8 +29,6 @@ git.exe clone --no-checkout --recursive       --progress -v   git@li.aihlp.com:g
 
 git.exe clone --no-checkout --recursive       --progress -v   git@li.aihlp.com:gitolite-admin.git
 
-git.exe clone --no-checkout --recursive       --progress -v   git@li.aihlp.com:gitosis-admin.git
-
 git.exe clone --no-checkout --recursive       --progress -v   git@li.aihlp.com:gpgkey.git
 
 git.exe clone --no-checkout --recursive       --progress -v   git@li.aihlp.com:hhu2.0.git
