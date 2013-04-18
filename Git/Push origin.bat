@@ -2,7 +2,7 @@
  for /d %%s in (*) do (
 echo %%s
 cd %%s
-git.exe fetch -v --progress "origin"
+git.exe push --all --progress  "origin"
 cd ..
 echo.
 )
