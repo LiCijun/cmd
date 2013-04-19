@@ -477,6 +477,7 @@ cd cpuCard
 git remote add VM  git@lcj.aihlp.com:li/cpuCard.git
 git remote add KMT  gitolite@kmt.aihlp.com:cpuCard.git
 git remote add origin  git@li.aihlp.com:li/cpuCard.git
+git remote set-url origin git@li.aihlp.com:li/cpuCard.git
 
 
 cd %~dp0
@@ -485,6 +486,7 @@ cd gx
 git remote add VM  git@lcj.aihlp.com:li/gx.git
 git remote add KMT  gitolite@kmt.aihlp.com:gx.git
 git remote add origin  git@li.aihlp.com:li/gx.git
+git remote set-url origin git@li.aihlp.com:li/gx.git
 
 
 cd %~dp0
@@ -493,6 +495,7 @@ cd hhucompany
 git remote add VM  git@lcj.aihlp.com:li/hhucompany.git
 git remote add KMT  gitolite@kmt.aihlp.com:hhucompany.git
 git remote add origin  git@li.aihlp.com:li/hhucompany.git
+git remote set-url origin git@li.aihlp.com:li/hhucompany.git
 
 
 cd %~dp0
@@ -501,6 +504,7 @@ cd jlwh
 git remote add VM  git@lcj.aihlp.com:li/jlwh.git
 git remote add KMT  gitolite@kmt.aihlp.com:jlwh.git
 git remote add origin  git@li.aihlp.com:li/jlwh.git
+git remote set-url origin git@li.aihlp.com:li/jlwh.git
 
 
 cd %~dp0
@@ -509,6 +513,7 @@ cd watermeter
 git remote add VM  git@lcj.aihlp.com:li/watermeter.git
 git remote add KMT  gitolite@kmt.aihlp.com:watermeter.git
 git remote add origin  git@li.aihlp.com:li/watermeter.git
+git remote set-url origin git@li.aihlp.com:li/watermeter.git
 
 
 cd %~dp0
@@ -517,6 +522,7 @@ cd sxocx
 git remote add VM  git@lcj.aihlp.com:li/sxocx.git
 git remote add KMT  gitolite@kmt.aihlp.com:sxocx.git
 git remote add origin  git@li.aihlp.com:li/sxocx.git
+git remote set-url origin git@li.aihlp.com:li/sxocx.git
 
 
 cd %~dp0
