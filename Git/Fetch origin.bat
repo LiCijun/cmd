@@ -1,9 +1,9 @@
 @echo off
  for /d %%s in (*) do (
 echo %%s
-cd %%s
+cd %~dp0%%s
 git.exe fetch -v --progress "origin"
-cd ..
+echo.
 echo.
 )
 pause

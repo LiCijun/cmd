@@ -1,9 +1,10 @@
 @echo off
  for /d %%s in (*) do (
 echo %%s
-cd %%s
-git.exe push --all --progress  "KMT"
-cd ..
+cd %~dp0%%s
+git.exe push --all  --progress  "KMT"
+git.exe push --tags --progress  "KMT" master:master
+echo.
 echo.
 )
 pause

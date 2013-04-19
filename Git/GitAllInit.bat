@@ -365,6 +365,7 @@ git.exe clone --no-checkout --recursive       --progress -v   git@li.aihlp.com:l
 cd p31
 git remote add VM  git@lcj.aihlp.com:li/p31.git
 git remote add KMT  gitolite@kmt.aihlp.com:p31.git
+git remote set-url KMT gitolite@kmt.aihlp.com:p31.git
 
 
 cd %~dp0
