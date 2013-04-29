@@ -538,5 +538,11 @@ cd gitolite-admin-KMT
 git.exe clone --no-checkout --recursive       --progress -v   gitolite@kmt.aihlp.com:gitolite-admin.git gitolite-admin-KMT
 git.exe remote rename origin KMT
 
+cd %~dp0
+git.exe clone --no-checkout --recursive       --progress -v   git@li.aihlp.com:li/u950.git
+cd u950
+git remote add VM  git@lcj.aihlp.com:li/u950.git
+git remote add origin  git@li.aihlp.com:li/u950.git
+
 @pause
 
