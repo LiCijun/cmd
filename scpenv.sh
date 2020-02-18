@@ -9,6 +9,7 @@ host=$1
 scp ~/.bashrc $host:~/
 scp ~/.nanorc $host:~/
 scp ~/.gitconfig $host:~/
+scp ~/.xprofile $host:~/
 scp ~/.config/fish/config.fish $host:~/.config/fish/
 
 #rsync -avP  ~/.config/fish/config.fish  $1:~/.config/fish/
