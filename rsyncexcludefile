@@ -2,3 +2,6 @@ run
 dev
 tmp
 proc
+mnt
+sys
+media

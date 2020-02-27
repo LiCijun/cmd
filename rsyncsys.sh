@@ -10,8 +10,10 @@ host=$1
 rsync -av /etc/bashrc $host:/etc/
 rsync -av /etc/environment $host:/etc/
 rsync -av /etc/profile $host:/etc/
+rsync -av /etc/ssh/ssh*config  $host:/etc/ssh/
 sudo rsync -av /etc/sudoers  $host:/etc/
-sudo rsync -av /etc/ssh/  $host:/etc/ssh/
+
+
 
 
 
