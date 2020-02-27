@@ -1,4 +1,4 @@
-/run/
-/dev/
-/tmp/
-/proc/
+run
+dev
+tmp
+proc
