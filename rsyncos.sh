@@ -9,10 +9,10 @@ host=$1
 
 if [ ! -n "$2" ] ;
 then   
-rsync -avP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --exclude=$host --exclude-from=rsyncexcludefile                      /  $host
+rsync -aAXvP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --exclude=$host --exclude-from=rsyncexcludefile                      /  $host
 else
 oldPath=$2
-rsync -avP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --exclude=$host --exclude-from=rsyncexcludefile   --link-dest=$oldPath /  $host
+rsync -aAXvP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found"} --exclude=$host --exclude-from=rsyncexcludefile   --link-dest=$oldPath /  $host
 fi
 
 
