@@ -7,11 +7,11 @@ exit
 fi
 host=$1
 
-rsync -av /etc/bashrc $host:/etc/
-rsync -av /etc/environment $host:/etc/
-rsync -av /etc/profile $host:/etc/
-rsync -av /etc/ssh/ssh*config  $host:/etc/ssh/
-sudo rsync -av /etc/sudoers  $host:/etc/
+
+rsync -avPAX /etc/environment $host:/etc/
+rsync -avPAX /etc/profile $host:/etc/
+rsync -avPAX /etc/ssh/ssh*config  $host:/etc/ssh/
+sudo rsync -avPAX /etc/sudoers  $host:/etc/
 
 
 

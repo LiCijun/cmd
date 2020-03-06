@@ -7,7 +7,7 @@ exit
 fi
 host=$1
 
-sudo rsync -av /etc/ssh/ssh_host_*_key*  $host:/etc/ssh/
+rsync   -avPAX   --exclude authorized_keys  --exclude known_hosts   ~/.ssh/ $host:~/.ssh/
 
 
 

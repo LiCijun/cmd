@@ -7,13 +7,13 @@ exit
 fi
 host=$1
 #rsync -av ~/.bash_login $host:~/
-rsync -av ~/.profile $host:~/
-rsync -av ~/.bash_profile $host:~/
-rsync -av ~/.bashrc $host:~/
-rsync -av ~/.nanorc $host:~/
-rsync -av ~/.gitconfig $host:~/
-rsync -av ~/.xprofile $host:~/
-rsync -av ~/.config/fish/  $host:~/.config/fish/
+rsync -avPAX ~/.profile $host:~/
+rsync -avPAX ~/.bash_profile $host:~/
+rsync -avPAX ~/.bashrc $host:~/
+rsync -avPAX ~/.nanorc $host:~/
+rsync -avPAX ~/.gitconfig $host:~/
+rsync -avPAX ~/.xprofile $host:~/
+rsync -avPAX ~/.config/fish/  $host:~/.config/fish/
 
 
 
