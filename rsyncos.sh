@@ -1,5 +1,6 @@
 #! /bin/bash
 set -e
+echo 操作系统备份
 if [ ! -n "$1" ] ;
 then   
 echo "请传入备份路径" ;
