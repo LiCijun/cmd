@@ -6,8 +6,8 @@ echo "请传入远程主机" ;
 exit
 fi
 host=$1
-./rsyncuser.sh
-./rsyncsys.sh
+/home/li/GitRepo/cmd/rsyncuser.sh  $host
+/home/li/GitRepo/cmd/rsyncsys.sh  $host
 
 
 

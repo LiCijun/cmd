@@ -7,7 +7,7 @@ exit
 fi
 host=$1
 
-sudo rsync -avPAX /etc/ssh/ssh_host_*_key*  $host:/etc/ssh/
+sudo rsync -avhPAX /etc/ssh/ssh_host_*_key*  $host:/etc/ssh/
 
 
 
