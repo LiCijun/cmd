@@ -8,14 +8,13 @@ fi
 host=$1
 
 
-rsync -avhPAX /etc/environment $host:/etc/
-rsync -avhPAX /etc/profile $host:/etc/
-rsync -avhPAX /etc/ssh/ssh*config  $host:/etc/ssh/
-rsync -avhPAX /etc/pacman.conf  $host:/etc/
-rsync -avhPAX /etc/pacman.d/   $host:/etc/pacman.d/
-sudo rsync -avhPAX /etc/sudoers  $host:/etc/
+rsync -ahAX /etc/environment $host:/etc/
+rsync -ahAX /etc/profile $host:/etc/
+rsync -ahAX /etc/ssh/ssh*config  $host:/etc/ssh/
+rsync -ahAX /etc/pacman.conf  $host:/etc/
+sudo rsync -ahAX /etc/pacman.d/   $host:/etc/pacman.d/
+sudo rsync -ahAX /etc/sudoers  $host:/etc/
 
-echo /etc/environment    /etc/profile  /etc/ssh/ssh*config  /etc/sudoers
 
 
 
