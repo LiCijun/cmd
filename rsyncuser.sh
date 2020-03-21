@@ -14,3 +14,4 @@ rsync -ah ~/.nanorc $host:~/
 rsync -ah ~/.gitconfig $host:~/
 rsync -ah ~/.xprofile $host:~/
 rsync -ah ~/.config/fish/  $host:~/.config/fish/
+rsync -ah ~/.config/locale.conf   $host:~/.config/
