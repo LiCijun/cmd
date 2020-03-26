@@ -11,10 +11,10 @@ host=/home/li/nasDir/osbak/
 
 if [ ! -n "$2" ] ;
 then   
-sudo rsync -ahAXvP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home",".snapshots"}  --exclude-from=rsyncexcludefile                         /  $host
+sudo rsync -ahAXvP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home",".snapshots","/home/li/nasDir/osbak",$host}  --exclude-from=rsyncexcludefile                         /  $host
 else
 oldPath=$2
-sudo rsync -ahAXvP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home",".snapshots"}  --exclude-from=rsyncexcludefile   --link-dest=$oldPath  /  $host
+sudo rsync -ahAXvP --delete --exclude={"/dev/*","/proc/*","/sys/*","/tmp/*","/run/*","/mnt/*","/media/*","/lost+found","/home",".snapshots","/home/li/nasDir/osbak",$host}  --exclude-from=rsyncexcludefile   --link-dest=$oldPath  /  $host
 fi
 
 
