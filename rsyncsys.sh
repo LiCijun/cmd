@@ -1,5 +1,5 @@
 #! /bin/bash
-set -e
+#set -e
 if [ ! -n "$1" ] ;
 then   
 echo "请传入远程主机" ;
