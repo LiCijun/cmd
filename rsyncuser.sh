@@ -8,7 +8,7 @@ fi
 host=$1
 #rsync -av ~/.bash_login $host:~/ no file
 rsync -ah ~/.bashrc $host:~/
-
+rsync -ah ~/.bash_logout $host:~/
 rsync -ah ~/.profile $host:~/
 rsync -ah ~/.bash_profile $host:~/
 rsync -ah ~/.nanorc $host:~/
