@@ -53,9 +53,13 @@ function fetchall(){
     
 }
 
-work_path=$(dirname $(dirname $(readlink -f $0)))
+cur==$(dirname $(dirname $(readlink -f $0)))
+work_path=$cur
+
 fetchall  $*
-work_path=$work_path/AndroidLib
+work_path=$cur/AndroidLib
+fetchall  $* 
+work_path=$cur/yt
 fetchall  $* 
 
 
