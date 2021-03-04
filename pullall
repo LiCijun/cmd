@@ -37,7 +37,7 @@ function pullall(){
     echo 
     done    
 }
-cur==$(dirname $(dirname $(readlink -f $0)))
+cur=$(dirname $(dirname $(readlink -f $0)))
 work_path=$cur
 pullall 
 work_path=$cur/AndroidLib
