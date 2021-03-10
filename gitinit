@@ -78,7 +78,10 @@ rm -rf $work_path/IntelliJIdea
 rm -rf $work_path/Android.AndroidProxy
 rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
-
+initGit HslCommunicationJavaDemo  cmd dsm dsmnfs lcj li vm 
+initGit plctools  cmd dsm dsmnfs lcj li vm 
+initGit uhftools  cmd dsm dsmnfs lcj li vm 
+initGit MitsubishiCommunication  cmd dsm dsmnfs lcj li vm 
 initGit yt/Common  cmd dsm dsmnfs lcj li vm 
 initGit yt/Common3 cmd dsm dsmnfs lcj li vm 
 initGit cmdshell  cmd dsm dsmnfs lcj li vm 
