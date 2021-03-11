@@ -78,6 +78,16 @@ rm -rf $work_path/IntelliJIdea
 rm -rf $work_path/Android.AndroidProxy
 rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
+
+initGit uhftools  cmd dsm dsmnfs lcj li vm 
+initGit uhftools  cmd dsm dsmnfs lcj li vm 
+initGit cmd-systemtools  cmd dsm dsmnfs lcj li vm 
+initGit cmd-serialport  cmd dsm dsmnfs lcj li vm 
+initGit cmd-protocol  cmd dsm dsmnfs lcj li vm 
+
+
+
+
 initGit HslCommunicationJavaDemo  cmd dsm dsmnfs lcj li vm 
 initGit plctools  cmd dsm dsmnfs lcj li vm 
 initGit uhftools  cmd dsm dsmnfs lcj li vm 
@@ -519,7 +529,7 @@ initGit godns vm dsmnfs li lcj dsm
 initGit ddns-dnspod-script vm dsmnfs li lcj dsm
 initGit ArDNSPod vm dsmnfs li lcj dsm
 
-
+initGithub dathlin HslCommunicationJavaDemo  vm dsmnfs li lcj dsm cmd
 initGithub ouyanghuiyu chineseocr_lite  vm dsmnfs li lcj dsm
 initGithub iotang archliveiso  vm dsmnfs li lcj dsm
 initGithub imki911 ArDNSPod  vm dsmnfs li lcj dsm
