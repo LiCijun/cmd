@@ -85,8 +85,6 @@ initGit cmd-systemtools  cmd dsm dsmnfs lcj li vm
 initGit cmd-serialport  cmd dsm dsmnfs lcj li vm 
 initGit cmd-protocol  cmd dsm dsmnfs lcj li vm 
 
-initGit gradle  cmd dsm dsmnfs lcj li vm 
-
 
 
 initGit HslCommunicationJavaDemo  cmd dsm dsmnfs lcj li vm 
