@@ -11,13 +11,14 @@ function fetchall(){
 
     for file in $work_path/*
     do  
+ #    echo $file 
     if test -d $file
     then    
         
         if [   -d ${file}'/.git'   ] ; then 
           
         cd $file       
-        
+#        echo $file 
 
         mm=$(git remote) ;  
          
@@ -53,9 +54,14 @@ function fetchall(){
     
 }
 
-work_path=$(dirname $(dirname $(readlink -f $0)))
+cur=$(dirname $(dirname $(readlink -f $0)))
+echo $cur
+work_path=$cur
+
 fetchall  $*
-work_path=$work_path/AndroidLib
+work_path=$cur/AndroidLib
+fetchall  $* 
+work_path=$cur/yt
 fetchall  $* 
 
 

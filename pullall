@@ -37,10 +37,12 @@ function pullall(){
     echo 
     done    
 }
-
-work_path=$(dirname $(dirname $(readlink -f $0)))
+cur=$(dirname $(dirname $(readlink -f $0)))
+work_path=$cur
 pullall 
-work_path=$work_path/AndroidLib
+work_path=$cur/AndroidLib
+pullall 
+work_path=$cur/yt
 pullall 
 
 
