@@ -1,5 +1,12 @@
 #! /bin/bash
 #push all
+function pull-remote()
+{
+        var=$1	
+        echo git pull   $var  $2  -v  --progress       $file 
+        git pull   $var $2 -v  --progress
+        echo 
+}
 function pullall(){
 
     for file in $work_path/*
@@ -19,19 +26,33 @@ function pullall(){
         fi
 
         mm=$(git remote) ;
-        echo $mm ;    
-        for var in $mm ; do
+		
+        echo $mm ;    		
+		
+		for var in $mm ; do
 
         if [ "$var"x = alix ] ;  
             then
               continue ;
         fi
-        echo git pull   $var $cbr -v  --progress          $file 
-        git pull   $var $cbr -v  --progress
-    
-        echo 
 
-        done           
+        if [[ $# -gt 0 ]]; then
+            rt=$(echo $* | grep -w $var)
+
+ #           echo ALL:$*  var:$var  rt  :  $rt
+            if [[ "$rt"xx = xx ]]; then            
+                continue ;
+            else
+                pull-remote $var $cbr $file 
+            fi            
+        else
+            pull-remote $var $cbr $file 
+        fi 
+ 
+		echo
+
+        done 
+		
         fi   
     fi
     echo 

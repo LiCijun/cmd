@@ -79,11 +79,12 @@ rm -rf $work_path/Android.AndroidProxy
 rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
-
+initGit ukeyinit  cmd dsm dsmnfs lcj li vm 
 initGit STSHW  cmd dsm dsmnfs lcj li vm 
 initGit cmd-systemtools  cmd dsm dsmnfs lcj li vm 
 initGit cmd-serialport  cmd dsm dsmnfs lcj li vm 
 initGit cmd-protocol  cmd dsm dsmnfs lcj li vm 
+initGithub winsw winsw   cmd dsm dsmnfs lcj li vm 
 
 
 
