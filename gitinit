@@ -88,7 +88,6 @@ initGithub winsw winsw   cmd dsm dsmnfs lcj li vm
 
 
 
-
 initGit HslCommunicationJavaDemo  cmd dsm dsmnfs lcj li vm 
 initGit plctools  cmd dsm dsmnfs lcj li vm 
 initGit uhftools  cmd dsm dsmnfs lcj li vm 
@@ -552,7 +551,7 @@ initGithub TimothyYe godns vm dsmnfs li lcj dsm
  
 
 work_path=$work_path/AndroidLib
-
+mkdir $work_path
 initGit Android.Event vm dsmnfs cmd lis lcjs dsm
 initGit Android.Lang vm dsmnfs cmd lis lcjs dsm
 initGit Android.Linq4j vm dsmnfs cmd lis lcjs dsm
