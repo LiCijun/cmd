@@ -29,7 +29,7 @@ function pullall(){
 		
         echo $mm ;    		
 		
-		for var in $mm ; do
+	for var in $mm ; do
 
         if [ "$var"x = alix ] ;  
             then
@@ -60,11 +60,11 @@ function pullall(){
 }
 cur=$(dirname $(dirname $(readlink -f $0)))
 work_path=$cur
-pullall 
+pullall $*
 work_path=$cur/AndroidLib
-pullall 
+pullall $*
 work_path=$cur/yt
-pullall 
+pullall $*
 
 
 
