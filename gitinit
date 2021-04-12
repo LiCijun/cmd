@@ -79,6 +79,7 @@ rm -rf $work_path/Android.AndroidProxy
 rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
+initGit uhftools-mac  cmd dsm dsmnfs lcj li vm 
 initGit ukeyinit  cmd dsm dsmnfs lcj li vm 
 initGit STSHW  cmd dsm dsmnfs lcj li vm 
 initGit cmd-systemtools  cmd dsm dsmnfs lcj li vm 
