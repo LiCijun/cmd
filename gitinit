@@ -1,5 +1,6 @@
 #! /bin/bash
-work_path=$(dirname $(dirname $(readlink -f $0)))
+cur_path=$(dirname $(dirname $(readlink -f $0)))
+work_path=$cur_path
 echo Git Repo Path:$work_path
 function initRemote(){ 
 #echo  $git_Repo_Path   $1
@@ -47,7 +48,9 @@ initRemote $var;
 done  
 
 }
-
+function mklcjdir(){
+   if [ ! -d $1 ] ; then mkdir -p $1 ; fi
+}
 function initGithub(){ 
  
 git_Repo_Path=$2
@@ -551,8 +554,8 @@ initGithub hechaoyuyu devicemanager vm dsmnfs li lcj dsm
 initGithub TimothyYe godns vm dsmnfs li lcj dsm
  
 
-work_path=$work_path/AndroidLib
-mkdir $work_path
+work_path=$cur_path/AndroidLib
+mklcjdir $work_path
 initGit Android.Event vm dsmnfs cmd lis lcjs dsm
 initGit Android.Lang vm dsmnfs cmd lis lcjs dsm
 initGit Android.Linq4j vm dsmnfs cmd lis lcjs dsm
@@ -563,6 +566,13 @@ initGit Android.Protocol vm dsmnfs cmd lis lcjs dsm
 initGit Android.BlueTooth vm dsmnfs cmd lis lcjs dsm
 initGit Android.P645 vm dsmnfs cmd li lcj dsm
 initGit Android.SecUnit vm dsmnfs cmd li lcj dsm
+
+work_path=$cur_path/yt
+mklcjdir $work_path
+
+
+
+
 
 
 
