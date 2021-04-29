@@ -83,6 +83,8 @@ rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
 
+initGit sg186  cmd lcj li vm 
+initGit sg186Doc  cmd lcj li vm 
 initGit uhftools-mac  cmd  lcj li vm 
 initGit ukeyinit  cmd lcj li vm 
 initGit STSHW  cmd lcj li vm 
