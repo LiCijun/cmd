@@ -4,7 +4,7 @@ function fsck()
 {
         var=$1  
         echo  git fsck --full   $file 
-        git fsck  --full
+        git gc --all
         echo 
 }
 function funall(){
