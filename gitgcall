@@ -1,10 +1,10 @@
 #! /bin/bash
 #push all
-function fsck()
+function gc()
 {
         var=$1  
-        echo  git fsck --full   $file 
-        git gc --all
+        echo  git gc --auto   $file 
+        git gc --auto
         echo 
 }
 function funall(){
@@ -17,7 +17,7 @@ function funall(){
         if [   -d ${file}'/.git'   ] ; then 
           
         cd $file               
-        fsck 
+        gc 
         fi 
     fi
    done
