@@ -1,0 +1,33 @@
+#! /bin/bash
+#push all
+function gc()
+{
+        var=$1  
+        echo  git gc --auto   $file 
+        git gc  --auto 
+        echo 
+}
+function funall(){
+
+    for file in $work_path/*
+    do  
+    if test -d $file
+    then    
+        
+        if [   -d ${file}'/.git'   ] ; then 
+          
+        cd $file               
+        gc 
+        fi 
+    fi
+   done
+        
+}
+cur=$(dirname $(dirname $(readlink -f $0)))
+work_path=$cur
+funall $*
+work_path=$cur/AndroidLib
+funall $*
+work_path=$cur/yt
+funall $*
+
