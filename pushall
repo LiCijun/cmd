@@ -3,9 +3,9 @@
 function push-remote()
 {
         var=$1
-        echo git -C $file push --all  --progress   $var     
+        echo git -C $file push $var --all  -v --progress        
         git push --all      --progress $var
-        echo git -C $file push --tags  --progress  $var   
+        echo git -C $file push $var --tags  -v --progress   
         git push --tags     --progress $var       
 
         echo 
