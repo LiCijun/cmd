@@ -3,7 +3,7 @@
 function pull-remote()
 {
         var=$1	
-        echo git pull   $var  $2  -v  --progress       $file 
+        echo git -C $file  pull   $var  $2  -v  --progress  
         git pull   $var $2 -v  --progress
         echo 
 }
