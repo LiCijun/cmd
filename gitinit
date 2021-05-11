@@ -82,6 +82,7 @@ rm -rf $work_path/Android.AndroidProxy
 rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
+initGit SCDII  cmd lcj li vm
 initGit cmd  cmd lcj li vm
 initGit sg186  cmd lcj li vm 
 initGit sg186Doc  cmd lcj li vm 
