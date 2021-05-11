@@ -1,4 +1,5 @@
 #!/bin/bash
+acme.sh  --issue --dns dns_dp  -d  aihlp.com  -d *.aihlp.com
 cd /home/li/.acme.sh/aihlp.com
 openssl pkcs12 -export -inkey aihlp.com.key -in aihlp.com.cer -out aihlp.com.pfx -password pass:zek65c43uns
 
