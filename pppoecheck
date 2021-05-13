@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+ mm=$(ip a | grep -w ppp0) ;
+ #echo $mm
+ if [[ "$mm"xx = xx ]]; then            
+    echo PPPOE NOT EXIST
+    echo 重新启动 PPPOE
+    netctl restart PPPOE
+ else
+    echo PPPOE OK
+fi    
+
+
+

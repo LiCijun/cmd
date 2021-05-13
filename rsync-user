@@ -14,9 +14,7 @@ rsync -ah ~/.bash_profile $host:~/
 rsync -ah ~/.nanorc $host:~/
 rsync -ah ~/.gitconfig $host:~/
 rsync -ah ~/.xprofile $host:~/
-rsync -ah ~/GitRepo/gitcmd  $host:~/GitRepo/ --exclude=.git
 rsync -ah ~/GitRepo/cmd  $host:~/GitRepo/ --exclude=.git
 ssh $host echo $host 
 rsync -ah ~/.config/locale.conf   $host:~/.config/
 rsync -ah ~/.config/fish/  $host:~/.config/fish/
-
