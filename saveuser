@@ -1,0 +1,13 @@
+#! /bin/bash
+cd ~/.config/google-chrome
+git add --all 
+git commit -m Auto
+push
+
+cd ~/
+
+git add --all 
+git commit -m Auto
+push
+
+

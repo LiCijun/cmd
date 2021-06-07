@@ -28,7 +28,7 @@ function pushall(){
         echo $mm ;    
         for var in $mm ; do
 
-        if [ "$var"x = alix ] || [ "$var"x = githubx ]   || [ "$var"x = giteex ];  
+        if [ "$var"x = alix ] || [ "$var"x = githubx ]   || [ "$var"x = lix ]  || [ "$var"x = giteex ];  
             then
               continue ;
         fi

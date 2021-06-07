@@ -18,7 +18,7 @@ function push(){
     mm=$(git remote) ;
     echo $mm ;    
     for var in $mm ; do
-        if [ "$var"x = alix ] ||  [ "$var"x = kmtx ];   then
+        if [ "$var"x = alix ] ||  [ "$var"x = kmtx ] ||  [ "$var"x = lix ];   then
             continue ;
         fi
 
