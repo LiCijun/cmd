@@ -11,12 +11,11 @@ rsync -ahPAXv  /etc/locale.conf 										$host:/etc/
 rsync -ahPAXv /etc/security/limits.conf   								$host:/etc/security/
 rsync -ahPAXv /etc/environment 											$host:/etc/
 rsync -ahPAXv /etc/profile   $host:/etc/
-#rsync -ahPAXv /etc/ssh/ssh*config  $host:/etc/ssh/
 rsync -ahPAXv /etc/pacman.conf  $host:/etc/
 rsync -ahPAXv  /etc/pacman.d/archlinuxcn-mirrorlist  $host:/etc/pacman.d/
- rsync -ahPAXv /etc/skel/.config/locale.conf   $host:/etc/skel/.config/
- rsync -ahPAXv /etc/xdg/reflector/  $host:/etc/xdg/reflector/
-sudo  rsync -ahPAXv /etc/pacman.d/   $host:/etc/pacman.d/
+rsync -ahPAXv /etc/skel/.config/locale.conf   $host:/etc/skel/.config/
+rsync -ahPAXv /etc/xdg/reflector/  $host:/etc/xdg/reflector/
+rsync -ahPAXv /etc/pacman.d/   $host:/etc/pacman.d/
 sudo rsync -ahPAXv /etc/sudoers  $host:/etc/
 
 

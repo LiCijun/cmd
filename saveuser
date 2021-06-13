@@ -4,6 +4,13 @@ git add --all
 git commit -m Auto
 push
 
+
+cd ~/.mozilla
+git add --all 
+git commit -m Auto
+push
+
+
 cd ~/
 
 git add --all 
