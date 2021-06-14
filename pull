@@ -26,7 +26,7 @@ function pull(){
     mm=$(git remote) ;
     echo  Current branch :$cbr   The remote :$mm ;    
     for var in $mm ; do
-        if [ "$var"x = alix ] ;  
+        if [ "$var"x = alix |  "$var"x = lix ] ;  
             then
               continue ;
         fi
