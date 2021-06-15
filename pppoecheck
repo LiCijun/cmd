@@ -5,7 +5,7 @@
  if [[ "$mm"xx = xx ]]; then            
     echo PPPOE NOT EXIST
     echo 重新启动 PPPOE
-    netctl restart PPPOE
+    netctl restart pppoe
  else
     echo PPPOE OK
 fi    
