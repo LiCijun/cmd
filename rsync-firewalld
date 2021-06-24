@@ -8,7 +8,6 @@ fi
 host=$1
 echo /etc/firewalld/services/ 
 rsync -ahAX   /etc/firewalld/services/ 	$host:/etc/firewalld/services/
-echo 
 echo 远程服务器重载防火墙
 ssh $host 'firewall-cmd --reload'
 
