@@ -38,7 +38,12 @@ rsync -ahAX /etc/skel/.config/locale.conf   $host:/etc/skel/.config/
   
 echo /etc/xdg/reflector/
 rsync -ahAX /etc/xdg/reflector/  $host:/etc/xdg/reflector/
-  
+
+echo /etc/sysctl.d
+rsync -ahAX --delete /etc/sysctl.d/  $host:/etc/sysctl.d/
+
+   
+   
 echo  firewalld
 rsync-firewalld $host
 
