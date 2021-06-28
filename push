@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-set -euo pipefail
-set -x
+set -u
+#set -x
 #set -x 将在命令执行前打印出命令 方便调试
-
-
 
 function push-remote()
 {
     var=$1
     echo push all   to  $var    
     git push --all      --progress $var             
-    git push --tags     --progress $var  
+    git push --tags      --progress $var  
     echo  
 }
 function push(){
@@ -43,6 +41,5 @@ function push(){
             push-remote $var
         fi                         
     done
-
 }
 push $* 
