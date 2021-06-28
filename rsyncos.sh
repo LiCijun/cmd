@@ -1,5 +1,12 @@
-#! /bin/bash
-set -e
+#!/usr/bin/env bash
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+set -euo pipefail
+#set -x
+#set -x 将在命令执行前打印出命令 方便调试
+
+
+
 echo 操作系统备份
 $1=admin@172.18.1.2:/share/CE_CACHEDEV1_DATA/archos/
 #if [ ! -n "$1" ] ;

@@ -1,4 +1,12 @@
-#! /bin/bash
+#!/usr/bin/env bash
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+set -euo pipefail
+#set -x
+#set -x 将在命令执行前打印出命令 方便调试
+
+
+
 work_path=$(dirname $(dirname $(readlink -f $0)))
 
 cd $work_path

@@ -1,5 +1,12 @@
-#! /bin/bash
-#set -e
+#!/usr/bin/env bash
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+set -euo pipefail
+#set -x
+#set -x 将在命令执行前打印出命令 方便调试
+
+
+
 if [ ! -n "$1" ] ;
 then   
 echo "请传入远程主机" ;
@@ -41,6 +48,21 @@ rsync -ahAX /etc/xdg/reflector/  $host:/etc/xdg/reflector/
 
 echo /etc/sysctl.d
 rsync -ahAX --delete /etc/sysctl.d/  $host:/etc/sysctl.d/
+
+echo /etc/systemd/system.conf
+rsync -ahAX /etc/systemd/system.conf  $host:/etc/systemd/
+
+   
+echo /etc/systemd/journald.conf
+rsync -ahAX /etc/systemd/journald.conf  $host:/etc/systemd/
+
+   
+echo /etc/systemd/logind.conf
+rsync -ahAX /etc/systemd/logind.conf   $host:/etc/systemd/
+
+   
+echo /etc/ssh/ssh_config
+rsync -ahAX /etc/ssh/ssh_config   $host:/etc/ssh/
 
    
    
