@@ -3,13 +3,12 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 set -euo pipefail
 #set -x
-#set -x ½«ÔÚÃüÁîÖ´ĞĞÇ°´òÓ¡³öÃüÁî ·½±ãµ÷ÊÔ
-
+#set -x å°†åœ¨å‘½ä»¤æ‰§è¡Œå‰æ‰“å°å‡ºå‘½ä»¤ æ–¹ä¾¿è°ƒè¯•
 
 
 if [ ! -n "$1" ] ;
 then   
-echo "Çë´«ÈëÔ¶³ÌÖ÷»ú" ;
+echo "è¯·ä¼ å…¥è¿œç¨‹ä¸»æœº" ;
 exit
 fi
 host=$1
