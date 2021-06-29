@@ -15,14 +15,24 @@ exit
 fi
 host=$1
 #rsync -av ~/.bash_login $host:~/ no file
+echo ~/.bashrc
 rsync -ah ~/.bashrc $host:~/
+echo ~/.bash_logout
 rsync -ah ~/.bash_logout $host:~/
+echo ~/.profile
 rsync -ah ~/.profile $host:~/
+echo ~/.bash_profile
 rsync -ah ~/.bash_profile $host:~/
+echo ~/.nanorc 
 rsync -ah ~/.nanorc $host:~/
+echo ~/.gitconfig
 rsync -ah ~/.gitconfig $host:~/
+echo ~/.xprofile
 rsync -ah ~/.xprofile $host:~/
+echo ~/GitRepo/cmd
 rsync -ah ~/GitRepo/cmd  $host:~/GitRepo/ --exclude=.git
-ssh $host echo $host 
+echo /.config/locale.conf
 rsync -ah ~/.config/locale.conf   $host:~/.config/
+echo ~/.config/fish/  
 rsync -ah ~/.config/fish/  $host:~/.config/fish/
+
