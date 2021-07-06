@@ -22,8 +22,8 @@ ssh esxi '/etc/init.d/vpxa restart'
 
 echo
 echo aihlp plex
-rsync -avPh ~/.acme.sh/aihlp.com/aihlp.com.pfx  root@aihlp:'/var/lib/plex/Plex Media Server/'
-rsync -avPh ~/.acme.sh/aihlp.com/aihlp.com.pfx  root@aihlp:/etc/ssl/private/
+rsync -aPh ~/.acme.sh/aihlp.com/aihlp.com.pfx  root@aihlp:'/var/lib/plex/Plex Media Server/'
+rsync -aPh ~/.acme.sh/aihlp.com/aihlp.com.pfx  root@aihlp:/etc/ssl/private/
 ssh root@aihlp chown plex: '"/etc/ssl/private/aihlp.com.pfx"'
 
 
@@ -42,7 +42,7 @@ ssh root@cmdsz 'systemctl restart httpd'
 
 echo
 echo vps.aihlp.com
-rsync -avPh ~/.acme.sh/vps.aihlp.com/vps.aihlp.com.key  root@vps:/etc/nginx/
-rsync -avPh ~/.acme.sh/vps.aihlp.com/vps.aihlp.com.cer  root@vps:/etc/nginx/
+rsync -aPh ~/.acme.sh/vps.aihlp.com/vps.aihlp.com.key  root@vps:/etc/nginx/
+rsync -aPh ~/.acme.sh/vps.aihlp.com/vps.aihlp.com.cer  root@vps:/etc/nginx/
 #ssh root@aihlp chown plex: '"/var/lib/plex/Plex Media Server/aihlp.com.pfx"'
 
