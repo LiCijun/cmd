@@ -5,8 +5,6 @@ set -uo pipefail
 #set -x
 #set -x 将在命令执行前打印出命令 方便调试
 
-
-
 function pull-remote()
 {
     var=$1

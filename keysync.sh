@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-set -euo pipefail
+set -uo pipefail
 #set -x
 #set -x 将在命令执行前打印出命令 方便调试
 
@@ -27,14 +27,10 @@ rsync -avPh .acme.sh/aihlp.com/aihlp.com.pfx  root@aihlp:/etc/ssl/private/
 ssh root@aihlp chown plex: '"/etc/ssl/private/aihlp.com.pfx"'
 
 
-
-echo 
-echo nas plex
-
-rsync -avPh .acme.sh/aihlp.com/aihlp.com.pfx  admin@172.18.1.2:'/share/CE_CACHEDEV1_DATA/etc/'
-ssh  admin@172.18.1.2 chmod 777 /share/CE_CACHEDEV1_DATA/etc/aihlp.com.pfx
-
-
+#echo 
+#echo nas plex
+#rsync -avPh .acme.sh/aihlp.com/aihlp.com.pfx  admin@172.18.1.2:'/share/CE_CACHEDEV1_DATA/etc/'
+#ssh  admin@172.18.1.2 chmod 777 /share/CE_CACHEDEV1_DATA/etc/aihlp.com.pfx
 
 
 echo 

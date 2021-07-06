@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-set -euo pipefail
+set -eo pipefail
 #set -x
 #set -x 将在命令执行前打印出命令 方便调试
 
@@ -9,8 +9,8 @@ set -euo pipefail
 
 function rsyncData()
 {	
-    sudo rsync -avPh $os:/var/cache/pacman/pkg/ /var/cache/pacman/pkg/
-	sudo rsync -avPh $os:/var/lib/pacman/  /var/lib/pacman/	
+        sudo rsync -avPh root@$os:/var/cache/pacman/pkg/ /var/cache/pacman/pkg/
+	sudo rsync -avPh root@$os:/var/lib/pacman/  /var/lib/pacman/	
 	if [[ "$1"x = x  ]]; then
 		echo rsync -avPh $os:~/.cache/yay/   ~/.cache/yay/
 		rsync -avPh $os:~/.cache/yay/   ~/.cache/yay/
