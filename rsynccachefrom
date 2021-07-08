@@ -9,8 +9,8 @@ set -eo pipefail
 
 function rsyncData()
 {	
-        sudo rsync -avPh root@$os:/var/cache/pacman/pkg/ /var/cache/pacman/pkg/
-	sudo rsync -avPh root@$os:/var/lib/pacman/  /var/lib/pacman/	
+#        sudo rsync -avPh root@$os:/var/cache/pacman/pkg/ /var/cache/pacman/pkg/
+#	sudo rsync -avPh root@$os:/var/lib/pacman/  /var/lib/pacman/	
 	if [[ "$1"x = x  ]]; then
 		echo rsync -avPh $os:~/.cache/yay/   ~/.cache/yay/
 		rsync -avPh $os:~/.cache/yay/   ~/.cache/yay/
