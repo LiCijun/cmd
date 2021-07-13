@@ -18,10 +18,10 @@ git add --all
 git commit -m Auto
 push
 
-cd ~/.config/JetBrains
-git add --all 
-git commit -m Auto
-push
+#cd ~/.config/JetBrains
+#git add --all 
+#git commit -m Auto
+#push
 
 
 cd ~/
