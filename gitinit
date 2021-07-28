@@ -178,7 +178,6 @@ initGit dataconvert kmt vm cmd li lcj
 initGit ust2 vm cmd li lcj 
 initGit ust2Doc vm cmd li lcj 
 initGit usttool vm cmd li lcj 
-initGit lcl vm cmd li lcj 
 initGit vnote vm cmd li lcj 
 initGit NWSealDoc vm cmd li lcj 
 initGit fstms vm cmd li lcj 
