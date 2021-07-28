@@ -3,9 +3,9 @@ Description=Configure Wake-up on LAN
 
 [Service]
 Type=oneshot
-RemainAfterExit=yes
+#RemainAfterExit=yes
 ExecStart=/usr/bin/wol 00:e8:4c:68:3f:76 00:e8:4c:69:03:b5 00:e8:4c:68:3c:83 00:e8:4c:68:3f:0c
 
-[Install]
-WantedBy=basic.target
+#[Install]
+#WantedBy=basic.target
 

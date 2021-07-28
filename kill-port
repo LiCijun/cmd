@@ -20,36 +20,7 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
-
-
-
-#eg 
-#check-param-num $# 1 请输入需要杀死进程的端口号
-
-
-if [ $# -lt 2 ] ; then 
-echo 检查参数输入个数不足
-fi
-
-if [ $# -lt 3 ] ; then 
-	msg="检查参数个数";
-else
-	msg=$3;
-fi
-
-
-if [ $1 -lt $2 ]; then 
-     echo $msg ;
-     exit 1;
-fi
-
-
-
-
-
-
-
-
-
-
+check-param-num $# 1 请输入需要杀死进程的端口号
+port=$1
+ss -lutnp | grep $port |   awk '{print $7}' | awk -F"," '{ print $2 }' | awk -F"=" '{ print $2 }' | xargs kill -s 9
 
