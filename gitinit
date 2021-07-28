@@ -173,7 +173,6 @@ initGit cmdprotocolbase vm cmd li lcj
 initGit cmdlibDoc vm cmd li lcj 
 initGit usttest vm cmd li lcj 
 initGit Business kmt vm cmd li lcj 
-initGit GradleHome vm cmd li lcj 
 initGit dataconvert kmt vm cmd li lcj 
 initGit ust2 vm cmd li lcj 
 initGit ust2Doc vm cmd li lcj 
