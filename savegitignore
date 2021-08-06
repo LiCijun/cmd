@@ -20,7 +20,12 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
-check-param-num $# 1 请输入需要杀死进程的端口号
-port=$1
-ss -lutnp | grep -w  $port |   awk '{print $7}' | awk -F"," '{ print $2 }' | awk -F"=" '{ print $2 }' | xargs kill -s 9
+
+
+echo $*  >> .gitignore
+sort-uniq-file .gitignore
+git rm --cached -r $* 
+
+
+
 
