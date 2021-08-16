@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-set -euo pipefail
+set -uo pipefail
 #set -x
 #set -x 将在命令执行前打印出命令 方便调试
 
@@ -89,7 +89,10 @@ rm -rf $work_path/Android.AndroidProxy
 rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
+
+initGitr linux vm li lcj
 initGit cmdjson  cmd lcj li vm
+initGit CmdForward  cmd lcj li vm
 initGit wi-sun  cmd lcj li vm
 initGit wi-sunDoc  cmd lcj li vm
 initGit SCDII  cmd lcj li vm
