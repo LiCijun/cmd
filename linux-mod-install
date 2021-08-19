@@ -23,12 +23,8 @@ set  -u
 
 cd ~/GitRepo/linux
 umask 0022
-sudo cp arch/x86_64/boot/bzImage /boot/vmlinuz-linux-lcj
-sudo mkinitcpio -p linux-lcj 
-sudo  grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=ArchLinux --recheck 
-sudo  grub-mkconfig -o /boot/grub/grub.cfg 
-sudo chmod 600 /boot/initramfs-linux*.img 
-sudo chmod 600 /boot/vmlinuz*
+sudo make modules_install
+#sudo make install
 
 
 
