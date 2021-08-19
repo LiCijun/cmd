@@ -63,6 +63,9 @@ rsync -ahAX /etc/systemd/logind.conf   $host:/etc/systemd/
 echo /etc/ssh/ssh_config
 rsync -ahAX /etc/ssh/ssh_config   $host:/etc/ssh/
 
+echo /etc/ssh/sshd_config
+rsync -ahAX /etc/ssh/sshd_config   $host:/etc/ssh/
+
 echo /etc/security/limits.d/10-gcr.conf
 rsync -ahAX /etc/security/limits.d/10-gcr.conf   $host:/etc/security/limits.d/
 
