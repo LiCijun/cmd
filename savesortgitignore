@@ -23,6 +23,7 @@ set  -u
 
 
 echo $*  >> .gitignore
+sort-uniq-file .gitignore
 git rm --cached -r $* 
 
 
