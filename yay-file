@@ -1,0 +1,77 @@
+#!/usr/bin/env bash
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+set -euo pipefail
+#set -x
+#set -x 将在命令执行前打印出命令 方便调试
+
+set -e
+# -e 遇到错误将停止 
+set -o pipefail
+# pipefail set -e有一个例外情况，就是不适用于管道命令。所谓管道命令，就是多个子命令通过管道运算符（|）组合成为一个大的命令。Bash 会把最后一个子命令的返回值，作为整个命令的返回值。也就是说，只要最后一个子命令不失败，管道命令总是会执行成功，因此它后面命令依然会执行，set -e就失效了。
+
+set  -u
+# -u 遇到不存在的变量 将报错
+
+## 写法一
+#set -euxo pipefail
+## 写法二
+#set -eux
+#set -o pipefail
+#这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
+#$ bash -euxo pipefail script.sh
+function yayapp()
+{  
+   appname=$1
+   set +e
+  cmdecho=$(yay --noconfirm --needed -S  $appname)
+   err=$?
+   set -e
+
+   if [ $err -eq 0 ] ; then
+   	 echo $appname >> $filename-OK   	
+   else 
+	   	echo $appname >> $filename-$err
+	   	set +e
+		if [  $(check-string-contain $cmdecho  "下载源文件时出错") -eq 0 ] ;then
+		   echo $appname >> $filename-DownError
+		else
+	       echo error code is  $err
+	   	   echo $appname >> $filename-$err			
+		fi
+	    set -e
+	   
+   fi
+   echo >&6    # 执行完一条命令会将令牌放回管道  
+}
+
+check-param-num $# 1 请输入需要安装的文件名
+if [ ! -f "$1" ]; then
+  echo 输入的文件不存在
+else
+
+ tmp_fifofile=$(mktemp -u)
+ #echo $tmp_fifofile
+ mkfifo $tmp_fifofile
+ exec 6<>$tmp_fifofile   # 创建文件描述符，以可读（<）可写（>）的方式关联管道文件，这时候文件描述符3就有了有名管道文件的所有特性
+ rm $tmp_fifofile # 关联后的文件描述符拥有管道文件的所有特性,所以这时候管道文件可以删除，我们留下文件描述符来用就可以了
+ thread=20
+ for ((i=0;i<$thread;i++));do
+echo
+done >&6
+
+ filename=$1
+  for line in $(<$filename); 
+  do  
+   read -u6      # read 命令每次读取一行，也就是拿到一个令牌
+
+   yayapp $line  &
+   done
+   wait
+   exec 6>&-     # 关闭文件描述符的写 
+   exec 6<&-      # 关闭文件描述符的读
+
+fi
+
+
+
