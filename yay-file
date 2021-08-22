@@ -48,7 +48,7 @@ function yayapp()
    set -e
 
    if [ $apperr -eq 0 ] ; then
-   	 echo $appname >> $filename-OK   	
+         	saveres $filename-OK $appname "$cmdecho"
    else 
 	   		set +e
 	   	check-string-contain "$cmdecho"  "下载源文件时出错"
@@ -56,7 +56,7 @@ function yayapp()
         set -e  
         if [ $err -eq 0 ]
           then
-          	saveres $filename-DownError $appname $cmdecho 	       
+          	saveres $filename-DownError $appname "$cmdecho"
         else
 	       set +e
            check-string-contain "$cmdecho"  "包冲突无法通过 noconfirm 解决，正在中止|检测到未解决的软件包冲突"
@@ -65,7 +65,7 @@ function yayapp()
          #  echo check-string  检测到未解决的软件包冲突  $err 
            if [ $err -eq 0 ]
                then
-               	saveres $filename-Confirm $appname $cmdecho 		          
+               	saveres $filename-Confirm $appname "$cmdecho"		          
 	       else 
            set +e
            check-string-contain "$cmdecho"  "生成时出错:"
@@ -73,7 +73,7 @@ function yayapp()
            set -e
           if [ $err -eq 0 ]
                then	 
-              	saveres $filename-BuildError $appname $cmdecho 
+              	saveres $filename-BuildError $appname "$cmdecho"
                else
            set +e
            check-string-contain "$cmdecho"  "status 429: Rate limit reached"
@@ -99,7 +99,7 @@ function yayapp()
          
   if [ $err -eq 0 ]
                then	 
-                saveres $filename-needapp $appname $cmdecho    
+                saveres $filename-needapp $appname "$cmdecho"
                else
            set +e
            check-string-contain "$cmdecho"  "错误：无法准备事务处理 (无法满足依赖关系)"
@@ -107,10 +107,10 @@ function yayapp()
            set -e
          if [ $err -eq 0 ]
                then	 
-                saveres $filename-dependencyError $appname $cmdecho    
+                saveres $filename-dependencyError $appname "$cmdecho"
                else
               echo  yay Result [$appname]:$cmdecho
-               saveres $filename-$apperr $appname $cmdecho 
+               saveres $filename-$apperr $appname "$cmdecho"
 	   	     fi
 	   	       fi
                fi   
