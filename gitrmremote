@@ -5,7 +5,7 @@ set -euo pipefail
 #set -x
 #set -x 将在命令执行前打印出命令 方便调试
 
-
+set +e
 
 
 function pullall(){

@@ -23,8 +23,8 @@ set  -u
 set +e
 str=$1
 substr=$2
-#echo  str    : $str
-#echo  substr: $substr
+echo  str    : $str
+echo  substr: $substr
 res=$(echo $str | egrep "$substr")
 #echo res:$res
 set -e

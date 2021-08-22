@@ -90,7 +90,7 @@ rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
 
-initGit linux vm li lcj
+initGitr linux vm li lcj
 initGit cmdjson  cmd lcj li vm
 initGit CmdForward  cmd lcj li vm
 initGit wi-sun  cmd lcj li vm
