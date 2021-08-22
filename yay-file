@@ -20,30 +20,119 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
+function saveres()
+{
+	resfilename=$1
+	resappname=$2
+	rescmdecho=$3
+    echo $resappname >> $resfilename  
+	echo $resappname >> $resfilename-detail   
+	echo $rescmdecho >> $resfilename-detail
+	echo $resappname >> $resfilename-detail   
+	echo  >> $resfilename-detail 	
+
+
+}
+
 function yayapp()
 {  
+    
    appname=$1
+  # echo install Start  app name :  $appname
    set +e
-  cmdecho=$(yay --noconfirm --needed -S  $appname)
-   err=$?
+   #cmdecho=$(yay --noconfirm --needed -S  $appname  >/dev/null 2>&1)
+   #cmdecho=$(yay --noconfirm --needed -S  $appname  2> /dev/stdout)
+    cmdecho=$(yay --noconfirm --needed -S  $appname  2>&1)
+   #cmdecho=$(yay --noconfirm --needed -S  $appname 1>/dev/null 2>&1)
+    apperr=$?  
    set -e
 
-   if [ $err -eq 0 ] ; then
+   if [ $apperr -eq 0 ] ; then
    	 echo $appname >> $filename-OK   	
    else 
-	   	echo $appname >> $filename-$err
-	   	set +e
-		if [  $(check-string-contain $cmdecho  "下载源文件时出错") -eq 0 ] ;then
-		   echo $appname >> $filename-DownError
-		else
-	       echo error code is  $err
-	   	   echo $appname >> $filename-$err			
-		fi
-	    set -e
-	   
+	   		set +e
+	   	check-string-contain "$cmdecho"  "下载源文件时出错"
+	    	err=$?
+        set -e  
+        if [ $err -eq 0 ]
+          then
+          	saveres $filename-DownError $appname $cmdecho 	       
+        else
+	       set +e
+           check-string-contain "$cmdecho"  "包冲突无法通过 noconfirm 解决，正在中止|检测到未解决的软件包冲突"
+            err=$?
+           set -e
+         #  echo check-string  检测到未解决的软件包冲突  $err 
+           if [ $err -eq 0 ]
+               then
+               	saveres $filename-Confirm $appname $cmdecho 		          
+	       else 
+           set +e
+           check-string-contain "$cmdecho"  "生成时出错:"
+            err=$?
+           set -e
+          if [ $err -eq 0 ]
+               then	 
+              	saveres $filename-BuildError $appname $cmdecho 
+               else
+           set +e
+           check-string-contain "$cmdecho"  "status 429: Rate limit reached"
+            err=$?
+           set -e
+           if [ $err -eq 0 ]
+               then	   
+              echo $cmdecho 
+              else
+           set +e
+           check-string-contain "$cmdecho"  "错误：无法锁定数据库"
+            err=$?
+           set -e
+         if [ $err -eq 0 ]
+               then	   
+              echo 错误：无法锁定数据库 
+             else  
+
+           set +e
+           check-string-contain "$cmdecho"  "找不到所有需要的包:"
+            err=$?
+           set -e             	
+         
+  if [ $err -eq 0 ]
+               then	 
+                saveres $filename-needapp $appname $cmdecho    
+               else
+           set +e
+           check-string-contain "$cmdecho"  "错误：无法准备事务处理 (无法满足依赖关系)"
+            err=$?
+           set -e
+         if [ $err -eq 0 ]
+               then	 
+                saveres $filename-dependencyError $appname $cmdecho    
+               else
+              echo  yay Result [$appname]:$cmdecho
+               saveres $filename-$apperr $appname $cmdecho 
+	   	     fi
+	   	       fi
+               fi   
+               fi 	
+           fi
+   	       fi
+	      
+        fi
    fi
+  # echo $cmdecho
+  # echo install Over  app name :  $appname error code $apperr
    echo >&6    # 执行完一条命令会将令牌放回管道  
 }
+
+
+if [ $#  -gt 1 ]  #判断左边是否大于右边的值，大于则返回true，否则返回false
+then
+    thread=$2
+else
+    thread=30
+fi
+echo Thread Count is : $thread  
 
 check-param-num $# 1 请输入需要安装的文件名
 if [ ! -f "$1" ]; then
@@ -55,22 +144,28 @@ else
  mkfifo $tmp_fifofile
  exec 6<>$tmp_fifofile   # 创建文件描述符，以可读（<）可写（>）的方式关联管道文件，这时候文件描述符3就有了有名管道文件的所有特性
  rm $tmp_fifofile # 关联后的文件描述符拥有管道文件的所有特性,所以这时候管道文件可以删除，我们留下文件描述符来用就可以了
- thread=20
+
  for ((i=0;i<$thread;i++));do
-echo
-done >&6
+echo >&6
+done 
 
  filename=$1
   for line in $(<$filename); 
   do  
+   set +e
+   sleep 1s
+ #  err=$?
+  # if [ $err -ne 0 ] 
+  # then
+ #  echo sleep err:$err
+  # fi
+   set -e
    read -u6      # read 命令每次读取一行，也就是拿到一个令牌
-
    yayapp $line  &
    done
    wait
    exec 6>&-     # 关闭文件描述符的写 
    exec 6<&-      # 关闭文件描述符的读
-
 fi
 
 

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 set -euo pipefail
-#set -x
+# set -x
 #set -x 将在命令执行前打印出命令 方便调试
 
 set -e
@@ -20,17 +20,20 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
-
+set +e
 str=$1
 substr=$2
-res=$(echo $str | egrep "$(substr)")
-if [[ "$res"!="" ]]
-then 
-	exit 0
-else
+#echo  str    : $str
+#echo  substr: $substr
+res=$(echo $str | egrep "$substr")
+#echo res:$res
+set -e
+if [ -z "$res" ]
+then 	
+	#echo check string not exits  return 1
 	exit 1
-
-
-
-
+else
+	#echo check string  exits  return 0
+	exit 0
+fi
 
