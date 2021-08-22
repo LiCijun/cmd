@@ -42,7 +42,7 @@ function yayapp()
    set +e
    #cmdecho=$(yay --noconfirm --needed -S  $appname  >/dev/null 2>&1)
    #cmdecho=$(yay --noconfirm --needed -S  $appname  2> /dev/stdout)
-    cmdecho=$(yay --noconfirm --needed -S  $appname  2>&1)
+    cmdecho=$(yay --noconfirm --needed -S  $appname  1>&1 2>&1)
    #cmdecho=$(yay --noconfirm --needed -S  $appname 1>/dev/null 2>&1)
     apperr=$?  
    set -e
