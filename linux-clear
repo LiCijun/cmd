@@ -22,6 +22,8 @@ set  -u
 #$ bash -euxo pipefail script.sh
 
 cd ~/GitRepo/linux
-git pull  origin master
-
+umask 0022
+cpuCount=$(grep "processor" /proc/cpuinfo | sort -u | wc -l)
+cpuCount=$(expr $cpuCount - 2)
+make clear
 
