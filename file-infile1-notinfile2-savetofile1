@@ -20,9 +20,9 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
-filename=$(mktemp)
-file-infile1-notinfile2 $1 $2 > $filename
-mv $filename $1
+fileTname=$(mktemp)
+file-infile1-notinfile2 $1 $2 > $fileTname
+mv $fileTname $1
 
 
 
