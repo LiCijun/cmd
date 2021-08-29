@@ -90,7 +90,7 @@ rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
 
-initGitr linux vm li lcj
+initGit linux vm li lcj
 initGit cmdjson  cmd lcj li vm
 initGit CmdForward  cmd lcj li vm
 initGit wi-sun  cmd lcj li vm
@@ -565,6 +565,7 @@ initGithub zh-google-styleguide zh-google-styleguide vm li lcj
 initGithub Tencent TscanCode vm li lcj 
 initGithub hechaoyuyu devicemanager vm li lcj 
 initGithub TimothyYe godns vm li lcj 
+initGithub netty netty vm li lcj cmd
 
 work_path=$cur_path/AndroidLib
 mklcjdir $work_path
