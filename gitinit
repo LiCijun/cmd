@@ -91,6 +91,7 @@ rm -rf $work_path/AppRelease
 
 
 initGit linux vm li lcj
+initGit ElectricityTools  cmd lcj li vm
 initGit cmdjson  cmd lcj li vm
 initGit CmdForward  cmd lcj li vm
 initGit wi-sun  cmd lcj li vm
