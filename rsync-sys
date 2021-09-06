@@ -83,3 +83,15 @@ rsync -ahAX /etc/pam.d/login   $host:/etc/pam.d/
 echo  firewalld
 rsync-firewalld $host
 
+
+
+echo /etc/wireguard/peers.conf
+sudo rsync -ahAX /etc/wireguard/peers.conf   $host:/etc/wireguard/
+
+echo /etc/wireguard/genwg
+sudo rsync -ahAX /etc/wireguard/genwg   $host:/etc/wireguard/
+
+echo /etc/wireguard/genkey
+sudo rsync -ahAX /etc/wireguard/genkey   $host:/etc/wireguard/
+
+ssh $host 'systemctl restart wg-quick@wg'
