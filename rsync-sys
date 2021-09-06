@@ -73,6 +73,9 @@ rsync -ahAX /etc/security/limits.d/10-gcr.conf   $host:/etc/security/limits.d/
 echo /etc/security/limits.conf
 rsync -ahAX /etc/security/limits.conf   $host:/etc/security/
 
+echo /etc/makepkg.conf
+rsync -ahAX /etc/makepkg.conf   $host:/etc/
+
 echo /etc/pam.d/login
 rsync -ahAX /etc/pam.d/login   $host:/etc/pam.d/
 
