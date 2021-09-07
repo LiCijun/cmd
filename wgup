@@ -20,12 +20,17 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
-
+set +e
 /home/li/GitRepo/cmd/down-iplist
+err=$?
+ if [ $err -eq 0 ]
+         then
+       set -e   
+        java -jar /home/li/GitRepo/cmd/getIPFromJson-1.0-SNAPSHOT.jar
+ 
+ fi
 
-
-java -jar /home/li/GitRepo/cmd/getIPFromJson-1.0-SNAPSHOT.jar
-
+set -e 
 /home/li/GitRepo/cmd/route-all
 
 
