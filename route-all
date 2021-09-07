@@ -47,7 +47,7 @@ function addip
 if [ $err -eq 0 ]
 then  
 	#  echo  " route add -net  $ip gw 172.25.1.5 "
-	  sudo  ip -4 route add   $ip  via  172.25.1.5 2>/dev/null
+	   ip -4 route add   $ip  via  172.25.1.5 2>/dev/null
 #	  sudo route add -net  $ip gw 172.25.1.5
    err=$?
     if [ $err -eq 2 ]
@@ -65,7 +65,7 @@ then
    fi
 else
 	#echo  " ip -6 route add   $ip  via  fc00::5 "
-  sudo  ip -6 route add   $ip  via  fc00::5   2>/dev/null
+  ip -6 route add   $ip  via  fc00::5   2>/dev/null
    err=$?
     if [ $err -eq 2 ]
     	 then
