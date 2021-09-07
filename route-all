@@ -20,27 +20,90 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
+function check_ip() {
+    IP=$1
+    VALID_CHECK=$(echo $IP|awk -F. '$1<=255&&$2<=255&&$3<=255&&$4<=255{print "yes"}')
+    if echo $IP|grep -E "^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}">/dev/null; then
+        if [ ${VALID_CHECK:-no} == "yes" ]; then
+            #echo "IP $IP available."
+            return 0
+        else
+           # echo "IP $IP not available!"
+             return 0
+        fi
+    else
+        # echo "IP format error!"
+        return 2
+    fi
+}
+function addip
+{
+   set +e
+	ip=$1
+	 
+  check_ip    $ip
 
-set +e
+  err=$?
+if [ $err -eq 0 ]
+then  
+	#  echo  " route add -net  $ip gw 172.25.1.5 "
+	  sudo  ip -4 route add   $ip  via  172.25.1.5 2>/dev/null
+#	  sudo route add -net  $ip gw 172.25.1.5
+   err=$?
+    if [ $err -eq 2 ]
+    	 then
+    	  return  0;
+    else
+    	if [ $err -eq 0 ]
+    	then
+    			return  0;
+    	else
+    		echo ErrorCode:$err
+    		exit $err
+    		return  $err  
+    	fi  	  
+   fi
+else
+	#echo  " ip -6 route add   $ip  via  fc00::5 "
+  sudo  ip -6 route add   $ip  via  fc00::5   2>/dev/null
+   err=$?
+    if [ $err -eq 2 ]
+    	 then
+    	  return  0;
+    else
+    	if [ $err -eq 0 ]
+    	then
+    			return  0;
+    	else
+    		echo ErrorCode:$err
+    		exit $err
+    		return  $err  
+    	fi  	  
+   fi
+ fi
 
- filename="google-ip"
+ 
+
+
+
+   set -e  
+}
+
+set -e
+
+ filename="/home/li/GitRepo/cmd/google-ip"
   for line in $(<$filename); 
   do  
-  echo  " route add -net  $line gw 172.25.1.5 "
-  sudo route add -net  $line gw 172.25.1.5
-   sudo route add -host  $line gw 172.25.1.5
+  addip $line
  done
   
 
- filename="github-ip"
+ filename="/home/li/GitRepo/cmd/github-ip"
   for line in $(<$filename); 
   do  
-  echo  " route add -net  $line gw 172.25.1.5 "
- sudo  route add -net  $line gw 172.25.1.5
- sudo  route add -host  $line gw 172.25.1.5
+ addip $line
  done
   
-
 
 
 

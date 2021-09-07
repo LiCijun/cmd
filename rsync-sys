@@ -84,6 +84,9 @@ echo  firewalld
 rsync-firewalld $host
 
 
+echo /etc/dnsmasq.conf
+sudo rsync -ahAX /etc/dnsmasq.conf   $host:/etc/
+
 
 echo /etc/wireguard/peers.conf
 sudo rsync -ahAX /etc/wireguard/peers.conf   $host:/etc/wireguard/
@@ -95,3 +98,4 @@ echo /etc/wireguard/genkey
 sudo rsync -ahAX /etc/wireguard/genkey   $host:/etc/wireguard/
 
 ssh $host 'systemctl restart wg-quick@wg'
+ssh $host 'systemctl restart dnsmasq'
