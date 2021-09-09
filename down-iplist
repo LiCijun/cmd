@@ -27,5 +27,6 @@ curl \
 
 curl https://www.gstatic.com/ipranges/goog.json -o google-ipjson
 
+curl https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt -o gfwlist.txt
 
 
