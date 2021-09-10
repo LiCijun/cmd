@@ -35,8 +35,6 @@ function procFile()
 
    procDomain $line 
    done
-   sort-uniq-file  gfwlist-ip 
-   wait
 }
 function procDomain()
 {
@@ -57,11 +55,22 @@ function procDomain()
 	#echo $ips
 for oneIP in $ips; 
   do  	
-   echo $oneIP >> gfwlist-ip 
+   echo $oneIP >> $tmpFilename
  done
 }
 
+tmpFilename=$(mktemp)
 procFile lcj_domain.conf
+cat $tmpFilename >> gfwlist-ip 
+sort-uniq-file  gfwlist-ip 
+
+tmpFilename=$(mktemp)
 procFile gfwlist_domain.conf
+cat $tmpFilename >> gfwlist-ip 
+sort-uniq-file  gfwlist-ip 
+
+
+
+
 
 
