@@ -107,5 +107,11 @@ set -e
 
 
 
+ filename="/home/li/GitRepo/cmd/gfwlist-ip"
+  for line in $(<$filename); 
+  do  
+ addip $line
+ done
+  
 
 
