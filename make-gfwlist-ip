@@ -61,7 +61,7 @@ for oneIP in $ips;
  done
 }
 
-
+procFile lcj_domain.conf
 procFile gfwlist_domain.conf
 
 
