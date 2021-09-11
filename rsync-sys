@@ -80,9 +80,6 @@ echo /etc/pam.d/login
 rsync -ahAX /etc/pam.d/login   $host:/etc/pam.d/
 
    
-echo  firewalld
-rsync-firewalld $host
-
 
 echo /etc/dnsmasq.conf
 sudo rsync -ahAX /etc/dnsmasq.conf   $host:/etc/
@@ -97,5 +94,15 @@ sudo rsync -ahAX /etc/wireguard/genwg   $host:/etc/wireguard/
 echo /etc/wireguard/genkey
 sudo rsync -ahAX /etc/wireguard/genkey   $host:/etc/wireguard/
 
-ssh $host 'systemctl restart wg-quick@wg'
+
+
+
+
+echo  firewalld
+rsync-firewalld $host
+
+echo Restart dnsmasq 
 ssh $host 'systemctl restart dnsmasq'
+
+echo Restart wg-quick@wg
+ssh $host 'systemctl restart wg-quick@wg'
