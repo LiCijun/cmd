@@ -26,3 +26,9 @@ echo GfwServer start  .....
 
 
 ./down-iplist
+cd gfw
+java -jar getIPFromJson-1.0-SNAPSHOT.jar
+cd ..
+
+./makednsmasq
+./make-gfwlist-ip

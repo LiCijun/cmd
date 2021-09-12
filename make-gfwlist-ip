@@ -61,13 +61,13 @@ for oneIP in $ips;
 
 tmpFilename=$(mktemp)
 procFile lcj_domain.conf
-cat $tmpFilename >> gfwlist-ip 
-sort-uniq-file  gfwlist-ip 
+cat $tmpFilename >> gfw/gfwlist-ip 
+./sort-uniq-file  gfw/gfwlist-ip 
 
 tmpFilename=$(mktemp)
-procFile gfwlist_domain.conf
-cat $tmpFilename >> gfwlist-ip 
-sort-uniq-file  gfwlist-ip 
+procFile gfw/gfwlist_domain.conf
+cat $tmpFilename >> gfw/gfwlist-ip 
+./sort-uniq-file  gfw/gfwlist-ip 
 
 
 

@@ -23,6 +23,6 @@ set  -u
 
 
 
-gfwlist2dnsmasq.sh  -d 45.76.65.246 -p 53 -o dnsmasq_gfwlist.conf
-gfwlist2dnsmasq.sh  -l -o gfwlist_domain.conf
+./gfwlist2dnsmasq.sh  -d 8.8.8.8 -p 53 -o gfw/dnsmasq_gfwlist.conf
+./gfwlist2dnsmasq.sh  -l -o gfw/gfwlist_domain.conf
 
