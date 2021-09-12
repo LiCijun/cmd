@@ -21,12 +21,6 @@ set  -u
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
 
-curl \
-  -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/meta -o  gfw/github-ipjson
 
-curl https://www.gstatic.com/ipranges/goog.json -o gfw/google-ipjson
-
-curl https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt -o gfw/gfwlist.txt
 
 

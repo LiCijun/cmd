@@ -30,7 +30,7 @@ rsync -ah ~/.gitconfig $host:~/
 echo ~/.xprofile
 rsync -ah ~/.xprofile $host:~/
 echo ~/GitRepo/cmd
-rsync -ah ~/GitRepo/cmd  $host:~/GitRepo/ --exclude=.git
+rsync -ah ~/GitRepo/cmd  $host:~/GitRepo/ --exclude=.git --exclude=gfw
 echo ~/.config/locale.conf
 rsync -ah ~/.config/locale.conf   $host:~/.config/
 echo ~/.config/fish/  
