@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 set -euo pipefail
-#set -x
+set -x
 #set -x 将在命令执行前打印出命令 方便调试
 
 set -e
@@ -22,53 +22,19 @@ set  -u
 #$ bash -euxo pipefail script.sh
 
 
-function procFile()
-{
-	 filename=$1
-  for line in $(<$filename); 
-  do  
-  #  err=$?
-  # if [ $err -ne 0 ] 
-  # then
-  #  echo sleep err:$err
-  # fi  
-
-   procDomain $line 
-   done
-}
-function procDomain()
-{
-	domain=$1
-	
-	set +e 
-	nsstr=$(nslookup $domain)
-	err=$?
-	set -e 
-  
-   if [ $err -ne 0 ] 
-  then
-    echo nslookup $domain err:$err str:"$nsstr"
-    return 0
-   fi  
-
-	ips=$(echo  "$nsstr"|egrep 'Address:' |  awk '{if(NR!=1) print $NF}' | sort | uniq )
-	#echo $ips
-for oneIP in $ips; 
-  do  	
-   echo $oneIP >> $tmpFilename
- done
-}
-
-tmpFilename=$(mktemp)
-procFile lcj_domain.conf
-cat $tmpFilename >> gfwlist-ip 
-sort-uniq-file  gfwlist-ip 
-
-tmpFilename=$(mktemp)
-procFile gfwlist_domain.conf
-cat $tmpFilename >> gfwlist-ip 
-sort-uniq-file  gfwlist-ip 
-
+check-param-num $# 1  请输入需要修改的文件名
+check-param-num $# 2  请输入需要删除的内容
+check-file-exists $1
+filename=$1
+del=${@:2}
+echo $del
+echo $(cat $filename)
+ for line in ${del};
+ do
+echo $line
+sed  "\'s/\<$line\>\//g\'" $filename
+done
+echo $(cat $filename)
 
 
 
