@@ -70,7 +70,8 @@ cat $tmpFilename >> gfw/gfwlist-ip
 ./sort-uniq-file  gfw/gfwlist-ip 
 
 
-
+./file-del-contont gfw/gfwlist-ip 127.0.0.1
+./file-del-contont gfw/gfwlist-ip ::1
 
 
 
