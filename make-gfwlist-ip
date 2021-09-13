@@ -47,6 +47,7 @@ function procDomain()
   
    if [ $err -ne 0 ] 
   then
+    echo 
     echo nslookup $domain err:$err str:"$nsstr"
     return 0
    fi  
