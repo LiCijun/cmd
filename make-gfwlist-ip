@@ -59,20 +59,26 @@ for oneIP in $ips;
    echo $oneIP >> $tmpFilename
  done
 }
-
+umask 0022
 tmpFilename=$(mktemp)
 procFile lcj_domain.conf
-cat $tmpFilename >> gfw/gfwlist-ip 
-./sort-uniq-file  gfw/gfwlist-ip 
+cat $tmpFilename >> /gfw/gfwlist-ip 
+chmod 755 /gfw/gfwlist-ip
+./sort-uniq-file  /gfw/gfwlist-ip 
+chmod 755 /gfw/gfwlist-ip
 
 tmpFilename=$(mktemp)
-procFile gfw/gfwlist_domain.conf
-cat $tmpFilename >> gfw/gfwlist-ip 
-./sort-uniq-file  gfw/gfwlist-ip 
+procFile /gfw/gfwlist_domain.conf
+chmod 755 /gfw/gfwlist-ip
+cat $tmpFilename >> /gfw/gfwlist-ip 
+./sort-uniq-file  /gfw/gfwlist-ip 
+chmod 755 /gfw/gfwlist-ip
 
 
-./file-del-contont gfw/gfwlist-ip 127.0.0.1
-./file-del-contont gfw/gfwlist-ip ::1
+./file-del-contont /gfw/gfwlist-ip 127.0.0.1
+./file-del-contont /gfw/gfwlist-ip ::1
+chmod 755 /gfw/gfwlist-ip
+
 
 
 

@@ -24,14 +24,9 @@ set  -u
 echo GfwServer start  .....
 umask 0022
 
-chmod 755 -R ./
-
 ./down-iplist
-cd gfw
 java -jar getIPFromJson-1.0-SNAPSHOT.jar
-cd ..
 
 ./makednsmasq
 ./make-gfwlist-ip
 
-chmod 755 -R ./

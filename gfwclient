@@ -21,10 +21,14 @@ set  -u
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
 
+echo down google ip 
 curl http://vps.aihlp.com/gfw/google-ip -o gfw/google-ip-tmp
+echo down github ip 
 curl http://vps.aihlp.com/gfw/github-ip -o gfw/github-ip-tmp
+echo down gfwlist ip 
 curl http://vps.aihlp.com/gfw/gfwlist-ip -o gfw/gfwlist-ip-tmp
-curl http://vps.aihlp.com/gfw/dnsmasq_gfwlist.conf -o gfw/dnsmasq_gfwlist_Client-tmp.conf
+echo down dnsmasq  
+curl http://vps.aihlp.com/gfw/dnsmasq_gfwlist -o gfw/dnsmasq_gfwlist_Client-tmp.conf
 umask 0022
 chmod 744 -R gfw
 
@@ -62,14 +66,16 @@ fi
 err=$?
 if [ $err -ne 0 ]
 then
-	echo update dnsmasq_gfwlist.conf
-	mv gfw/dnsmasq_gfwlist_Client-tmp.conf dnsmasq_gfwlist_Client.conf
+	echo update dnsmasq
+	mv gfw/dnsmasq_gfwlist_Client-tmp.conf gfw/dnsmasq_gfwlist_Client.conf
+	echo restart dnsmasq
 	systemctl restart dnsmasq
 fi
 
 
 if [ $start==1 ]
 then
+      echo restart wg-quick@wg
       systemctl restart wg-quick@wg
 fi
 

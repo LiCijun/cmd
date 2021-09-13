@@ -23,10 +23,10 @@ set  -u
 
 curl \
   -H "Accept: application/vnd.github.v3+json" \
-  https://api.github.com/meta -o  gfw/github-ipjson
+  https://api.github.com/meta -o  /gfw/github-ipjson
 
-curl https://www.gstatic.com/ipranges/goog.json -o gfw/google-ipjson
+curl https://www.gstatic.com/ipranges/goog.json -o /gfw/google-ipjson
 
-curl https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt -o gfw/gfwlist.txt
+curl https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt -o /gfw/gfwlist.txt
 
 
