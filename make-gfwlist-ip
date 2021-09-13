@@ -78,7 +78,7 @@ chmod 755 /gfw/gfwlist-ip
 ./file-del-contont /gfw/gfwlist-ip 127.0.0.1
 ./file-del-contont /gfw/gfwlist-ip ::1
 chmod 755 /gfw/gfwlist-ip
-
+echo make gfwlist ip Over !!!
 
 
 
