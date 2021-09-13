@@ -24,6 +24,7 @@ set  -u
 curl http://vps.aihlp.com/gfw/google-ip -o gfw/google-ip-tmp
 curl http://vps.aihlp.com/gfw/github-ip -o gfw/github-ip-tmp
 curl http://vps.aihlp.com/gfw/gfwlist-ip -o gfw/gfwlist-ip-tmp
+curl http://vps.aihlp.com/gfw/dnsmasq_gfwlist.conf -o gfw/dnsmasq_gfwlist_Client-tmp.conf
 
 set +e
 ./compare-file-by-sha512 gfw/google-ip-tmp gfw/google-ip
@@ -53,6 +54,17 @@ then
 	mv gfw/gfwlist-ip-tmp gfw/gfwlist-ip
 	start=1
 fi
+
+
+./compare-file-by-sha512 gfw/dnsmasq_gfwlist_Client-tmp.conf gfw/dnsmasq_gfwlist_Client.conf
+err=$?
+if [ $err -ne 0 ]
+then
+	echo update dnsmasq_gfwlist.conf
+	mv gfw/dnsmasq_gfwlist_Client-tmp.conf dnsmasq_gfwlist_Client.conf
+	systemctl restart dnsmasq
+fi
+
 
 if [ $start==1 ]
 then
