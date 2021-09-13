@@ -21,8 +21,13 @@ set  -u
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
 
-
-
 ./gfwlist2dnsmasq.sh  -d 8.8.8.8 -p 53 -o /gfw/dnsmasq_gfwlist
 ./gfwlist2dnsmasq.sh  -l -o /gfw/gfwlist_domain.conf
+
+
+filename="lcj_domain.conf"
+  for line in $(<$filename); 
+  do  
+    echo "server=/${line}/8.8.8.8#53" >> /gfw/dnsmasq_gfwlist
+ done
 
