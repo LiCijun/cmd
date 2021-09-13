@@ -59,6 +59,7 @@ for oneIP in $ips;
    echo $oneIP >> $tmpFilename
  done
 }
+echo make gfwlist ip Start ....
 umask 0022
 tmpFilename=$(mktemp)
 procFile lcj_domain.conf
