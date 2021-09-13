@@ -25,7 +25,7 @@ curl http://vps.aihlp.com/gfw/google-ip -o gfw/google-ip-tmp
 curl http://vps.aihlp.com/gfw/github-ip -o gfw/github-ip-tmp
 curl http://vps.aihlp.com/gfw/gfwlist-ip -o gfw/gfwlist-ip-tmp
 curl http://vps.aihlp.com/gfw/dnsmasq_gfwlist.conf -o gfw/dnsmasq_gfwlist_Client-tmp.conf
-
+umask 0022
 chmod 744 -R gfw
 
 set +e

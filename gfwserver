@@ -22,7 +22,7 @@ set  -u
 #$ bash -euxo pipefail script.sh
 
 echo GfwServer start  .....
-
+umask 0022
 
 chmod 755 -R ./
 
