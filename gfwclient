@@ -26,6 +26,8 @@ curl http://vps.aihlp.com/gfw/github-ip -o gfw/github-ip-tmp
 curl http://vps.aihlp.com/gfw/gfwlist-ip -o gfw/gfwlist-ip-tmp
 curl http://vps.aihlp.com/gfw/dnsmasq_gfwlist.conf -o gfw/dnsmasq_gfwlist_Client-tmp.conf
 
+chmod 744 -R gfw
+
 set +e
 ./compare-file-by-sha512 gfw/google-ip-tmp gfw/google-ip
 err=$?
