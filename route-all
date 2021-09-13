@@ -91,23 +91,24 @@ else
 
 set -e
 
- filename="/home/li/GitRepo/cmd/google-ip"
+echo Google-ip
+ filename="/home/li/GitRepo/cmd/gfw/google-ip"
   for line in $(<$filename); 
   do  
   addip $line
  done
   
-
- filename="/home/li/GitRepo/cmd/github-ip"
+echo Github-ip
+ filename="/home/li/GitRepo/cmd/gfw/github-ip"
   for line in $(<$filename); 
   do  
  addip $line
  done
   
+echo gfwlist-ip
 
 
-
- filename="/home/li/GitRepo/cmd/gfwlist-ip"
+ filename="/home/li/GitRepo/cmd/gfw/gfwlist-ip"
   for line in $(<$filename); 
   do  
  addip $line

@@ -24,6 +24,7 @@ set  -u
 echo GfwServer start  .....
 
 
+chmod 755 -R ./
 
 ./down-iplist
 cd gfw
@@ -32,3 +33,5 @@ cd ..
 
 ./makednsmasq
 ./make-gfwlist-ip
+
+chmod 755 -R ./
