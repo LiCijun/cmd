@@ -49,7 +49,7 @@ function addip
 if [ $err -eq 0 ]
 then  
 	#  echo  " route add -net  $ip gw 172.25.1.5 "
-	   ip -4 route add   $ip  dev ppp0 2>/dev/null
+	   ip -4 route add   $ip  dev $dev 2>/dev/null
 #	  sudo route add -net  $ip gw 172.25.1.5
    err=$?
     if [ $err -eq 2 ]
@@ -68,7 +68,7 @@ then
    fi
 else
 	#echo  " ip -6 route add   $ip  via  fc00::5 "
-  ip -6 route add   $ip  dev ppp0  2>/dev/null
+  ip -6 route add   $ip  dev $dev  2>/dev/null
    err=$?
     if [ $err -eq 2 ]
     	 then
@@ -96,6 +96,7 @@ else
 set -e
 
 echo china-ip
+dev=$1
  filename="/usr/share/chnroutes-alike/chnroutes-alike.txt"
 
  cat $filename | while read line
