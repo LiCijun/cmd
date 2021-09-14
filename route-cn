@@ -20,6 +20,7 @@ set  -u
 #set -o pipefail
 #这两种写法建议放在所有 Bash 脚本的头部。另一种办法是在执行 Bash 脚本的时候，从命令行传入这些参数。
 #$ bash -euxo pipefail script.sh
+
 function check_ip 
 {
     IP=$1
@@ -106,9 +107,16 @@ echo china-ip
 	   if [ $err -ne 0 ]
 	   then 
 		   set -e
-		   addip "$line"
+#		   addip "$line"
+if [[ ~$line = ~"" || ~$line = ~"^\s\+#" ]]
+then 
+#	echo $line
+set -e
+else
+	set -e
+	addip $line
+fi
 	   fi
-
 
     done
 exit
