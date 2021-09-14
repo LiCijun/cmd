@@ -33,6 +33,8 @@ umask 0022
 chmod 744 -R gfw
 
 set +e
+pacman -S chnroutes-alike-git --noconfirm
+
 ./compare-file-by-sha512 gfw/google-ip-tmp gfw/google-ip
 err=$?
 start=0
@@ -72,12 +74,11 @@ then
 	systemctl restart dnsmasq
 fi
 
-
 if [ $start==1 ]
 then
       echo restart wg-quick@wg
       systemctl restart wg-quick@wg
 fi
 
-
+echo wg restart OK
 
