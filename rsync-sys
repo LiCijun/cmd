@@ -12,8 +12,8 @@ echo "请传入远程主机" ;
 exit
 fi
 host=$1
-echo /etc/pacman.d/ 
-sudo rsync -ahAX /etc/pacman.d/   $host:/etc/pacman.d/
+#echo /etc/pacman.d/ 
+#sudo rsync -ahAX /etc/pacman.d/   $host:/etc/pacman.d/
 
 echo /etc/sudoers 
 sudo rsync -ahAX /etc/sudoers  $host:/etc/

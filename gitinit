@@ -91,6 +91,7 @@ rm -rf $work_path/AppRelease
 
 
 initGit P645-JavaLib  cmd  lcj li vm
+initGit testResource  cmd  lcj li vm
 initGit Lang  cmd  lcj li vm
 initGit linux vm li lcj
 initGit ElectricityTools  cmd lcj li vm
