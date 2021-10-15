@@ -59,7 +59,7 @@ function fetchall(){
     done
     
 }
-
+set +e
 cur=$(dirname $(dirname $(readlink -f $0)))
 echo $cur
 work_path=$cur

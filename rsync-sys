@@ -95,6 +95,8 @@ echo /etc/wireguard/genkey
 sudo rsync -ahAX /etc/wireguard/genkey   $host:/etc/wireguard/
 
 
+echo systemctl service
+rsync -ahAX /home/li/GitRepo/cmd/service/   $host:/etc/systemd/system/
 
 
 
