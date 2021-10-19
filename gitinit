@@ -93,6 +93,8 @@ rm -rf $work_path/AppRelease
 initGit P645-JavaLib  cmd  lcj li vm
 initGit testResource  cmd  lcj li vm
 initGit git-tools aur  cmd  lcj li vm
+initGit gfwlist-route aur  cmd  lcj li vm
+initGit gfwlist-dnsmasq aur  cmd  lcj li vm
 initGit lcj aur  cmd  lcj li vm
 initGit systemd-kexec aur  cmd  lcj li vm
 initGit systemd-godns aur  cmd  lcj li vm
