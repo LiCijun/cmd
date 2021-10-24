@@ -98,6 +98,8 @@ initGit gfwlist-route aur  cmd  lcj li vm
 initGit ukplus  cmd  lcj li vm
 initGit gfwlist-dnsmasq aur  cmd  lcj li vm
 initGit lcj aur  cmd  lcj li vm
+initGit systemd-wol aur  cmd  lcj li vm
+initGit systemd-autossh aur  cmd  lcj li vm
 initGit systemd-kexec aur  cmd  lcj li vm
 initGit systemd-godns aur  cmd  lcj li vm
 initGit wireguard-tools-china aur  cmd  lcj li vm
