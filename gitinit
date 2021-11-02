@@ -95,6 +95,7 @@ initGit P645-JavaLib  cmd  lcj li vm
 initGit testResource  cmd  lcj li vm
 initGit git-tools aur  cmd  lcj li vm
 initGit gfwlist-route aur  cmd  lcj li vm
+initGit lcjdb aur  cmd  lcj li vm
 initGit ukplus  cmd  lcj li vm
 initGit gfwlist-dnsmasq aur  cmd  lcj li vm
 initGit lcj aur  cmd  lcj li vm
@@ -568,7 +569,7 @@ initGithub iotang archliveiso  vm li lcj
 initGithub imki911 ArDNSPod  vm li lcj 
 initGithub xiaoicx ddns-dnspod-script vm li lcj 
 initGithub kkkgo EnterpriseGconvert vm li lcj 
-
+initGithub Aloxaf aur-build vm li lcj 
 initGithub gfwlist gfwlist vm li lcj 
 initGithub protocolbuffers protobuf vm li lcj 
 initGithub hsz idea-gitignore vm li lcj 
@@ -597,7 +598,6 @@ initGit Android.Protocol vm cmd lis lcjs
 initGit Android.BlueTooth vm cmd lis lcjs 
 initGit Android.P645 vm cmd li lcj 
 initGit Android.SecUnit vm cmd li lcj 
-
 work_path=$cur_path/yt
 mklcjdir $work_path
 
