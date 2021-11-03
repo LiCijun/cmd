@@ -12,11 +12,6 @@ echo "请传入远程主机" ;
 exit
 fi
 host=$1
-#echo /etc/pacman.d/ 
-#sudo rsync -ahAX /etc/pacman.d/   $host:/etc/pacman.d/
-
-echo /etc/sudoers 
-sudo rsync -ahAX /etc/sudoers  $host:/etc/
   
 echo /etc/conf.d/reflector.conf 
 rsync -ahAX   /etc/conf.d/reflector.conf 							$host:/etc/conf.d/
@@ -33,8 +28,6 @@ rsync -ahAX /etc/environment 											$host:/etc/
 echo /etc/profile
 rsync -ahAX /etc/profile   $host:/etc/
   
-echo /etc/pacman.conf
-rsync -ahAX /etc/pacman.conf  $host:/etc/
   
 echo  /etc/pacman.d/archlinuxcn-mirrorlist
 rsync -ahAX  /etc/pacman.d/archlinuxcn-mirrorlist  $host:/etc/pacman.d/
@@ -50,15 +43,12 @@ rsync -ahAX --delete /etc/sysctl.d/  $host:/etc/sysctl.d/
 
 echo /etc/systemd/system.conf
 rsync -ahAX /etc/systemd/system.conf  $host:/etc/systemd/
-
    
 echo /etc/systemd/journald.conf
 rsync -ahAX /etc/systemd/journald.conf  $host:/etc/systemd/
-
    
 echo /etc/systemd/logind.conf
 rsync -ahAX /etc/systemd/logind.conf   $host:/etc/systemd/
-
    
 echo /etc/ssh/ssh_config
 rsync -ahAX /etc/ssh/ssh_config   $host:/etc/ssh/
@@ -85,20 +75,11 @@ echo /etc/dnsmasq.conf
 sudo rsync -ahAX /etc/dnsmasq.conf   $host:/etc/
 
 
-echo /etc/wireguard/peers.conf
-sudo rsync -ahAX /etc/wireguard/peers.conf   $host:/etc/wireguard/
-
 echo /etc/wireguard/genwg
 sudo rsync -ahAX /etc/wireguard/genwg   $host:/etc/wireguard/
 
 echo /etc/wireguard/genkey
 sudo rsync -ahAX /etc/wireguard/genkey   $host:/etc/wireguard/
-
-
-echo systemctl service
-rsync -ahAX /home/li/GitRepo/cmd/service/   $host:/etc/systemd/system/
-
-
 
 echo  firewalld
 rsync-firewalld $host
