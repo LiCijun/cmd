@@ -96,6 +96,7 @@ initGit testResource  cmd  lcj li vm
 initGit git-tools aur  cmd  lcj li vm
 initGit gfwlist-route aur  cmd  lcj li vm
 initGit lcjdb aur  cmd  lcj li vm
+initGit yay aur  cmd  lcj li vm
 initGit ukplus  cmd  lcj li vm
 initGit gfwlist-dnsmasq aur  cmd  lcj li vm
 initGit lcj aur  cmd  lcj li vm
