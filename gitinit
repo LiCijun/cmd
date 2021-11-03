@@ -95,16 +95,16 @@ initGit P645-JavaLib  cmd  lcj li vm
 initGit testResource  cmd  lcj li vm
 initGit oracledb aur  cmd  lcj li vm
 initGit git-tools aur  cmd  lcj li vm
-initGit gfwlist-route aur  cmd  lcj li vm
-initGit lcjdb aur  cmd  lcj li vm
+initGit gfwlist-route aur aurdb  cmd  lcj li vm
+initGit lcjdb  cmd  lcj li vm pacdb
 initGit ukplus  cmd  lcj li vm
-initGit gfwlist-dnsmasq aur  cmd  lcj li vm
-initGit lcj aur  cmd  lcj li vm
-initGit systemd-wol aur  cmd  lcj li vm
-initGit systemd-autossh aur  cmd  lcj li vm
-initGit systemd-kexec aur  cmd  lcj li vm
-initGit systemd-godns aur  cmd  lcj li vm
-initGit wireguard-tools-china aur  cmd  lcj li vm
+initGit gfwlist-dnsmasq aur  aurdb cmd  lcj li vm
+initGit lcj aur aurdb  cmd  lcj li vm
+initGit systemd-wol aur aurdb  cmd  lcj li vm
+initGit systemd-autossh aur aurdb cmd  lcj li vm
+initGit systemd-kexec aur aurdb  cmd  lcj li vm
+initGit systemd-godns aur aurdb  cmd  lcj li vm
+initGit wireguard-tools-china aur aurdb  cmd  lcj li vm
 initGit Lang  cmd  lcj li vm
 initGit linux vm li lcj
 initGit ElectricityTools  cmd lcj li vm
@@ -233,7 +233,7 @@ initGit AndroidSign kmt vm cmd lis lcjs
 initGit iso14001_28001 kmt vm cmd lis lcjs 
 initGit hhui kmt vm cmd lis lcjs 
 initGit usbkeyocx kmt vm cmd lis lcjs 
-initGit gitolite-admin vm li lcj 
+initGit gitolite-admin  aurdb vm li lcj pacdb
 initGit keyupdate_WinClient kmt vm cmd li lcj 
 initGit demo kmt vm cmd li lcj 
 initGit fss kmt vm cmd li lcj 
