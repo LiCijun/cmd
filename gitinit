@@ -90,16 +90,17 @@ rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
 
+initGit lcj   	aurdb li vm
+initGit lcjdb  	li vm pacdb
+
 initGit DeviceManagement  cmd  lcj li vm
 initGit P645-JavaLib  cmd  lcj li vm
 initGit testResource  cmd  lcj li vm
 initGit oracledb aur  cmd  lcj li vm
 initGit git-tools aur  cmd  lcj li vm
 initGit gfwlist-route aur aurdb  cmd  lcj li vm
-initGit lcjdb  cmd  lcj li vm pacdb
 initGit ukplus  cmd  lcj li vm
 initGit gfwlist-dnsmasq aur  aurdb cmd  lcj li vm
-initGit lcj aur aurdb  cmd  lcj li vm
 initGit systemd-wol aur aurdb  cmd  lcj li vm
 initGit systemd-autossh aur aurdb cmd  lcj li vm
 initGit systemd-kexec aur aurdb  cmd  lcj li vm
