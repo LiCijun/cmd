@@ -91,6 +91,7 @@ rm -rf $work_path/AppRelease
 
 
 initGit lcj   	aurdb li vm
+initGit route-set   	aurdb li vm
 initGit lcjdb  	li vm pacdb
 
 initGit DeviceManagement  cmd  lcj li vm
