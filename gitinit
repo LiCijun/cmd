@@ -91,6 +91,8 @@ rm -rf $work_path/AppRelease
 
 
 initGit lcj   	aurdb li vm
+initGit aurbase   	aurdb li vm
+initGit gfwlist-server 	aurdb li vm
 initGit route-set   	aurdb li vm
 initGit lcjdb  	li vm pacdb
 
