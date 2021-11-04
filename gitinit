@@ -95,12 +95,12 @@ initGit aurbase   	aurdb li vm
 initGit gfwlist-server 	aurdb li vm
 initGit route-set   	aurdb li vm
 initGit lcjdb  	li vm pacdb
+initGit git-tools aur aurdb li vm
 
 initGit DeviceManagement  cmd  lcj li vm
 initGit P645-JavaLib  cmd  lcj li vm
 initGit testResource  cmd  lcj li vm
 initGit oracledb aur  cmd  lcj li vm
-initGit git-tools aur  cmd  lcj li vm
 initGit yay aurdb li vm
 initGit firewalld-service  aurdb  cmd  lcj li vm
 initGit gfwlist-route aur aurdb  cmd  lcj li vm
