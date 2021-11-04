@@ -101,6 +101,8 @@ initGit P645-JavaLib  cmd  lcj li vm
 initGit testResource  cmd  lcj li vm
 initGit oracledb aur  cmd  lcj li vm
 initGit git-tools aur  cmd  lcj li vm
+initGit yay aurdb li vm
+initGit firewalld-service  aurdb  cmd  lcj li vm
 initGit gfwlist-route aur aurdb  cmd  lcj li vm
 initGit ukplus  cmd  lcj li vm
 initGit gfwlist-dnsmasq aur  aurdb cmd  lcj li vm
