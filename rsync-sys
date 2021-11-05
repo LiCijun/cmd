@@ -86,6 +86,3 @@ rsync-firewalld $host
 
 echo Restart dnsmasq 
 ssh $host 'systemctl restart dnsmasq'
-
-echo Restart wg-quick@wg
-ssh $host 'systemctl restart wg-quick@wg'
