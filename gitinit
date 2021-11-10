@@ -90,6 +90,7 @@ rm -rf $work_path/FirefoxSync
 rm -rf $work_path/AppRelease
 
 
+initGit yubico   	aurdb li vm
 initGit lcj   	aurdb li vm
 initGit systemd-autossh   	aurdb li vm
 initGit lcj-mirror   	aurdb li vm
@@ -576,6 +577,7 @@ initGit ArDNSPod vm li lcj
 initGithub dathlin HslCommunicationJavaDemo  vm li lcj cmd
 initGithub ouyanghuiyu chineseocr_lite  vm li lcj 
 initGithub iotang archliveiso  vm li lcj 
+initGithub Yubico libu2f-host  vm li
 initGithub imki911 ArDNSPod  vm li lcj 
 initGithub xiaoicx ddns-dnspod-script vm li lcj 
 initGithub kkkgo EnterpriseGconvert vm li lcj 
