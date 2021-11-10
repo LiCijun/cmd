@@ -102,6 +102,7 @@ initGit route-set   	aurdb li vm
 initGit lcjdb  	li vm pacdb
 initGit git-tools aur aurdb li vm
 
+initGit UseElectricityByOrder   cmd  lcj li vm
 initGit DeviceManagement  cmd  lcj li vm
 initGit P645-JavaLib  cmd  lcj li vm
 initGit testResource  cmd  lcj li vm
